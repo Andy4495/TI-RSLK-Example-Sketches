@@ -38,6 +38,8 @@ const byte SCLK = 66;        // LCDSCLK pin on AF938 Display connector
 const byte SDIN = 67;        // LCDMOSI pin on AF938 Display connector
 byte new_line[4] = {0x80, 0xA0, 0xC0, 0xE0};               // DDRAM address for each line of the display
 NewhavenOLED oled(ROW_N, COLUMN_N, SDIN, SCLK, CS, RES);
+//                "Line 1          Line 2          "    // Template with 2x16 spacing for total of 32 chars
+const char s0[] = "01 Bump Switch                  ";   // Padded to 32 characters.
 const char s1[] = "Push left button to start.      ";   // Padded to 32 characters.
 const char s2[] = "Running.                        ";   // Padded to 32 characters.
 
@@ -51,6 +53,8 @@ void setup() {
   Serial.begin(115200);
 
   oled.begin();
+  oled.write(s0);  // Display program info
+  delay(1000);
 
   left_motor.begin(MOTOR_L_SLP_PIN,
                    MOTOR_L_DIR_PIN,
