@@ -14,6 +14,15 @@ All sketches include code to display messages and status information to an exter
 ### 01_Bump_Switch_with_OLED
 This example has the TI RSLK driving forward until it hits an object (i.e. a bump switch is triggered), then it stops.
 
+### 02_Simple_Line_Follower
+The TI-RSLK follows a line on the floor using a simple (non-PID) algorithm.
+
+Library Notes
+-------------
+
+In addition to the [Library Modifications](#Library-Modifications) listed below, I have other observations on potential changes to the library:
+- The definition of RIGHT_MOTOR and LEFT_MOTOR seem to be reversed when considering the perspective of the "normal" robot forward direction has the bumper sensors at the front.
+
 
 Display Connection
 ------------------
