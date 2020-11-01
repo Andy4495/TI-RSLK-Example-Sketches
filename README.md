@@ -44,60 +44,59 @@ I have made several updates to my local copy of the Energia-TI-RSLK library to e
 
 1. Remove use of "String" object. While the memory is not nearly as constrained on the MSP432 as it is on the MSP430 and lower-end Arduino controllers, my preferences is to avoid using String, particularly in libraries and example sketches.
 
-  Files modified:
-
+  Files modified (branch "remove-String-class"):
+  ```
+    examples/01_Bump_Switch_Bare/01_Bump_Switch_Bare.ino
+    examples/02_Bump_Switch_Simplified/02_Bump_Switch_Simplified.ino
+    examples/03_Encoder_Simplified/03_Encoder_Simplified.ino
+    examples/04_Line_Following_Simplified/04_Line_Following_Simplified.ino
+    src/SimpleRSLK.cpp
+    src/SimpleRSLK.h
+  ```
 
 2. Compiler warnings:
 
-```
-C:\Users\Andy\OneDrive\Energia\libraries\Energia-RSLK-Library\src\SimpleRSLK.cpp: In function 'uint16_t readSharpDist(uint8_t)':
+Files modified (branch "fix-compiler-warnings"):
 
-C:\Users\Andy\OneDrive\Energia\libraries\Energia-RSLK-Library\src\SimpleRSLK.cpp:41:9: warning: comparison is always false due to limited range of data type [-Wtype-limits]
+```
+  examples/04_Line_Following_Simplified/04_Line_Following_Simplified.ino
+  src/Romi_Motor_Power.cpp
+  src/Romi_Motor_Power.h
+  src/SimpleRSLK.cpp
+  src/SimpleRSLK.h
+```
+
+Warning messages fixed:
+
+```
+  C:\Users\Andy\OneDrive\Energia\libraries\Energia-RSLK-Library\src\SimpleRSLK.cpp: In function 'uint16_t readSharpDist(uint8_t)':
+
+  C:\Users\Andy\OneDrive\Energia\libraries\Energia-RSLK-Library\src\SimpleRSLK.cpp:41:9: warning: comparison is always false due to limited range of data type [-Wtype-limits]
 
   if(num < 0 || num > 3)
 ```
 
 ```
-C:\Users\Andy\OneDrive\Energia\libraries\Energia-RSLK-Library\src\SimpleRSLK.cpp: In function 'bool isBumpSwitchPressed(uint8_t)':
+  C:\Users\Andy\OneDrive\Energia\libraries\Energia-RSLK-Library\src\SimpleRSLK.cpp: In function 'bool isBumpSwitchPressed(uint8_t)':
 
-C:\Users\Andy\OneDrive\Energia\libraries\Energia-RSLK-Library\src\SimpleRSLK.cpp:48:9: warning: comparison is always false due to limited range of data type [-Wtype-limits]
+  C:\Users\Andy\OneDrive\Energia\libraries\Energia-RSLK-Library\src\SimpleRSLK.cpp:48:9: warning: comparison is always false due to limited range of data type [-Wtype-limits]
 
   if(num < 0 || num > 5)
 ```
 
 ```
-C:\Users\Andy\OneDrive\Energia\libraries\Energia-RSLK-Library\src\SimpleRSLK.cpp: In function 'uint32_t getLinePosition(uint16_t*, uint8_t)':
+  C:\Users\Andy\OneDrive\Energia\libraries\Energia-RSLK-Library\src\SimpleRSLK.cpp: In function 'uint32_t getLinePosition(uint16_t*, uint8_t)':
 
-C:\Users\Andy\OneDrive\Energia\libraries\Energia-RSLK-Library\src\SimpleRSLK.cpp:184:52: warning: unused parameter 'mode' [-Wunused-parameter]
+  C:\Users\Andy\OneDrive\Energia\libraries\Energia-RSLK-Library\src\SimpleRSLK.cpp:184:52: warning: unused parameter 'mode' [-Wunused-parameter]
 
- uint32_t getLinePosition(uint16_t* calVal, uint8_t mode)
+  uint32_t getLinePosition(uint16_t* calVal, uint8_t mode)
 ```
 
 ```
-C:\Users\Andy\OneDrive\Energia\libraries\Energia-RSLK-Library\src\Romi_Motor_Power.cpp: In member function 'bool Romi_Motor_Power::begin(uint8_t, uint8_t, uint8_t)':
+  C:\Users\Andy\OneDrive\Energia\libraries\Energia-RSLK-Library\src\Romi_Motor_Power.cpp: In member function 'bool Romi_Motor_Power::begin(uint8_t, uint8_t, uint8_t)':
 
-C:\Users\Andy\OneDrive\Energia\libraries\Energia-RSLK-Library\src\Romi_Motor_Power.cpp:22:1: warning: no return statement in function returning non-void [-Wreturn-type]
-
- }
+  C:\Users\Andy\OneDrive\Energia\libraries\Energia-RSLK-Library\src\Romi_Motor_Power.cpp:22:1: warning: no return statement in function returning non-void [-Wreturn-type]
  ```
-
- ```
- C:\Users\Andy\AppData\Local\Energia15\packages\energia\hardware\msp432r\5.29.0\variants\MSP_EXP432P401R\Board_init.c: In function 'dmaErrorHwi':
-
-C:\Users\Andy\AppData\Local\Energia15\packages\energia\hardware\msp432r\5.29.0\variants\MSP_EXP432P401R\Board_init.c:358:35: warning: unused parameter 'arg' [-Wunused-parameter]
-
- static void dmaErrorHwi(uintptr_t arg)
-```
-
-```
-C:\Users\Andy\OneDrive\Energia\libraries\Energia-RSLK-Library\src\SimpleRSLK.cpp: In function 'uint32_t getLinePosition(uint16_t*, uint8_t)':
-
-C:\Users\Andy\OneDrive\Energia\libraries\Energia-RSLK-Library\src\SimpleRSLK.cpp:184:52: warning: unused parameter 'mode' [-Wunused-parameter]
-
- uint32_t getLinePosition(uint16_t* calVal, uint8_t mode)
-```
-
-
 
 References
 ----------

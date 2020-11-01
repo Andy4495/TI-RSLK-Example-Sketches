@@ -76,9 +76,8 @@ void setup() {
 }
 
 void loop() {
-  String btnMsg = "Push left button on Launchpad to start demo.\n";
+  const char* btnMsg = "Push left button on Launchpad to start demo.\n";
   oled.clear();
-  char s[] = "Push left button to start.      ";
   oled.write(s1);
   /* Wait until button is pressed to start robot */
   waitBtnPressed(LP_LEFT_BTN, btnMsg, RED_LED);
