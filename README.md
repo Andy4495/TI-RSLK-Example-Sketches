@@ -49,7 +49,7 @@ GND           1      -       -      -
 
 Library Modifications
 ---------------------
-I have made several updates to my local copy of the Energia-TI-RSLK library to eliminate compiler warnings and update some coding style preferences:
+I have made several updates to [my local fork][18] of the Energia-TI-RSLK library to eliminate compiler warnings and update some coding style preferences:
 
 1. Remove use of "String" object. While the memory is not nearly as constrained on the MSP432 as it is on the MSP430 and lower-end Arduino controllers, my preferences is to avoid using String, particularly in libraries and example sketches.
 
@@ -141,3 +141,4 @@ References
 [15]:https://www.hackster.io/rei-vilo/events-with-energia-mt-and-galaxia-library-741d9b
 [16]:https://www.hackster.io/rei-vilo/send-data-across-tasks-with-energia-and-galaxia-8be05c
 [17]:https://www.hackster.io/rei-vilo/manage-single-resource-with-energia-mt-and-galaxia-cadb26
+[18]:https://github.com/Andy4495/Energia-RSLK-Library
