@@ -3,6 +3,8 @@
 
    0.0.1  A.T.  10/28/2020  Initial Version
 
+   https://github.com/Andy4495/TI-RSLK-Example-Sketches
+
    Summary:
    This example has the TI Robotic System Learning Kit (TI RSLK) follow a line
    using a simple line following algorithm. This example works on a dark floor with
@@ -22,6 +24,7 @@
      with IR sensors.
 
    Based on example sketches included with the Energia-RSLK-Library by Franklin Cooper, Jr.
+     https://github.com/fcooper/Energia-RSLK-Library
 
 */
 

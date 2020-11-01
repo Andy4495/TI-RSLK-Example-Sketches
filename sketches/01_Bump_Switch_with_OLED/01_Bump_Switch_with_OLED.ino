@@ -1,6 +1,8 @@
 /*
    01_Bump_Switch_with_OLED
 
+   https://github.com/Andy4495/TI-RSLK-Example-Sketches
+
    0.0.1  A.T.  10/28/2020  Initial Version
 
    Summary:
@@ -20,6 +22,7 @@
    - https://github.com/Andy4495/NewhavenOLED
 
    Based on example sketches included with the Energia-RSLK-Library by Franklin Cooper, Jr.
+     https://github.com/fcooper/Energia-RSLK-Library
 
 */
 
