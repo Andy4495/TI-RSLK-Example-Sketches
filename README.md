@@ -125,6 +125,11 @@ References
   + [Passing data across tasks][16]
   + [Manage single resource across tasks][17]
 
+License
+-------
+The software and other files in this repository are released under what is commonly called the [MIT License][100]. See the file [`LICENSE`][101] in this repository.
+
+
 [1]:https://www.ti.com/tool/TIRSLK-EVM
 [2]:https://university.ti.com/en/faculty/ti-robotics-system-learning-kit/ti-rslk-max-edition-curriculum
 [3]:https://www.pololu.com/file/0J1670/ti-rslk-max-chassis-board-v1.0-schematic.pdf
@@ -142,3 +147,5 @@ References
 [16]:https://www.hackster.io/rei-vilo/send-data-across-tasks-with-energia-and-galaxia-8be05c
 [17]:https://www.hackster.io/rei-vilo/manage-single-resource-with-energia-mt-and-galaxia-cadb26
 [18]:https://github.com/Andy4495/Energia-RSLK-Library
+[100]: https://choosealicense.com/licenses/mit/
+[101]: ./LICENSE.txt
