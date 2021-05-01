@@ -1,5 +1,4 @@
-TI-RSLK Example Sketches
-========================
+# TI-RSLK Example Sketches
 
 The Texas Instruments Robotics System Learning Kit (TI-RSLK) has a complete online embedded programming course based on it. The course uses Code Composer Studio for the development environment.
 
@@ -7,28 +6,29 @@ A simpler development environment is available by using [Energia][11] and Frankl
 
 This repo contains various example and testing programs that I have created while experimenting with the TI-RSLK.
 
-Sketch Descriptions
--------------------
+## Sketch Descriptions
+
 All sketches include code to display messages and status information to an external NewHaven 2x16 OLED. The MSP432 controller used by the robot has 256KB flash memory and 64KB RAM, which is more than adequate to support the OLED library and text string storage, whether or not an actual display is used.
 
 ### 01_Bump_Switch_with_OLED
+
 This example has the TI RSLK driving forward until it hits an object (i.e. a bump switch is triggered), then it stops.
 
 ### 02_Simple_Line_Follower
+
 The TI-RSLK follows a line on the floor using a simple (non-PID) algorithm.
 
-Library Notes
--------------
+## Library Notes
 
 In addition to the [Library Modifications](#Library-Modifications) listed below, I have other observations on potential changes to the library:
+
 - The definition of RIGHT_MOTOR and LEFT_MOTOR seem to be reversed when considering the perspective of the "normal" robot forward direction has the bumper sensors at the front.
 
-
-Display Connection
-------------------
+## Display Connection
 
 The RSLK main board has connections to attach an LCD or OLED display to the robot chassis. The pins directly support SparkFun 10168, Adafruit 338, or Adafruit 938 displays. I don't have any of those displays, so I connected a NewHaven 2x16 OLED. Since the pin placement does not match, I created an adapter board that made use of the AF938 connector (which I use because it has a 5V supply pin). The pins are numbers 8 to 1 (left to right) when looking at the chassis from the top:
-```
+
+```text
                    Display
 SF 10168 LCD
 AF 338   LCD
@@ -47,88 +47,87 @@ NC            3      -       -      -    Pin is not connected
 GND           1      -       -      -   
 ```
 
-Library Modifications
----------------------
+## Library Modifications
+
 I have made several updates to [my local fork][18] of the Energia-TI-RSLK library to eliminate compiler warnings and update some coding style preferences:
 
 1. Remove use of "String" object. While the memory is not nearly as constrained on the MSP432 as it is on the MSP430 and lower-end Arduino controllers, my preferences is to avoid using String, particularly in libraries and example sketches.
 
-  Files modified (branch "remove-String-class"):
-  ```
-    examples/01_Bump_Switch_Bare/01_Bump_Switch_Bare.ino
-    examples/02_Bump_Switch_Simplified/02_Bump_Switch_Simplified.ino
-    examples/03_Encoder_Simplified/03_Encoder_Simplified.ino
-    examples/04_Line_Following_Simplified/04_Line_Following_Simplified.ino
-    src/SimpleRSLK.cpp
-    src/SimpleRSLK.h
-  ```
+   Files modified (branch "remove-String-class"):
+
+    ```text
+      examples/01_Bump_Switch_Bare/01_Bump_Switch_Bare.ino
+      examples/02_Bump_Switch_Simplified/02_Bump_Switch_Simplified.ino
+      examples/03_Encoder_Simplified/03_Encoder_Simplified.ino
+      examples/04_Line_Following_Simplified/04_Line_Following_Simplified.ino
+      src/SimpleRSLK.cpp
+      src/SimpleRSLK.h
+    ```
 
 2. Compiler warnings:
 
-Files modified (branch "fix-compiler-warnings"):
+    Files modified (branch "fix-compiler-warnings"):
 
-```
-  examples/04_Line_Following_Simplified/04_Line_Following_Simplified.ino
-  src/Romi_Motor_Power.cpp
-  src/Romi_Motor_Power.h
-  src/SimpleRSLK.cpp
-  src/SimpleRSLK.h
-```
+    ```text
+      examples/04_Line_Following_Simplified/04_Line_Following_Simplified.ino
+      src/Romi_Motor_Power.cpp
+      src/Romi_Motor_Power.h
+      src/SimpleRSLK.cpp
+      src/SimpleRSLK.h
+    ```
 
-Warning messages fixed:
+    Warning messages fixed:
 
-```
-  C:\Users\Andy\OneDrive\Energia\libraries\Energia-RSLK-Library\src\SimpleRSLK.cpp: In function 'uint16_t readSharpDist(uint8_t)':
+    ```text
+      C:\Users\Andy\OneDrive\Energia\libraries\Energia-RSLK-Library\src\SimpleRSLK.cpp: In function 'uint16_t readSharpDist(uint8_t)':
 
-  C:\Users\Andy\OneDrive\Energia\libraries\Energia-RSLK-Library\src\SimpleRSLK.cpp:41:9: warning: comparison is always false due to limited range of data type [-Wtype-limits]
+      C:\Users\Andy\OneDrive\Energia\libraries\Energia-RSLK-Library\src\SimpleRSLK.cpp:41:9: warning: comparison is always false due to limited range of data type [-Wtype-limits]
 
-  if(num < 0 || num > 3)
-```
+      if(num < 0 || num > 3)
+    ```
 
-```
-  C:\Users\Andy\OneDrive\Energia\libraries\Energia-RSLK-Library\src\SimpleRSLK.cpp: In function 'bool isBumpSwitchPressed(uint8_t)':
+    ```text
+      C:\Users\Andy\OneDrive\Energia\libraries\Energia-RSLK-Library\src\SimpleRSLK.cpp: In function 'bool isBumpSwitchPressed(uint8_t)':
 
-  C:\Users\Andy\OneDrive\Energia\libraries\Energia-RSLK-Library\src\SimpleRSLK.cpp:48:9: warning: comparison is always false due to limited range of data type [-Wtype-limits]
+      C:\Users\Andy\OneDrive\Energia\libraries\Energia-RSLK-Library\src\SimpleRSLK.cpp:48:9: warning: comparison is always false due to limited range of data type [-Wtype-limits]
 
-  if(num < 0 || num > 5)
-```
+      if(num < 0 || num > 5)
+    ```
 
-```
-  C:\Users\Andy\OneDrive\Energia\libraries\Energia-RSLK-Library\src\SimpleRSLK.cpp: In function 'uint32_t getLinePosition(uint16_t*, uint8_t)':
+    ```text
+      C:\Users\Andy\OneDrive\Energia\libraries\Energia-RSLK-Library\src\SimpleRSLK.cpp: In function 'uint32_t getLinePosition(uint16_t*, uint8_t)':
 
-  C:\Users\Andy\OneDrive\Energia\libraries\Energia-RSLK-Library\src\SimpleRSLK.cpp:184:52: warning: unused parameter 'mode' [-Wunused-parameter]
+      C:\Users\Andy\OneDrive\Energia\libraries\Energia-RSLK-Library\src\SimpleRSLK.cpp:184:52: warning: unused parameter 'mode' [-Wunused-parameter]
 
-  uint32_t getLinePosition(uint16_t* calVal, uint8_t mode)
-```
+      uint32_t getLinePosition(uint16_t* calVal, uint8_t mode)
+    ```
 
-```
-  C:\Users\Andy\OneDrive\Energia\libraries\Energia-RSLK-Library\src\Romi_Motor_Power.cpp: In member function 'bool Romi_Motor_Power::begin(uint8_t, uint8_t, uint8_t)':
+    ```text
+      C:\Users\Andy\OneDrive\Energia\libraries\Energia-RSLK-Library\src\Romi_Motor_Power.cpp: In member function 'bool Romi_Motor_Power::begin(uint8_t, uint8_t, uint8_t)':
 
-  C:\Users\Andy\OneDrive\Energia\libraries\Energia-RSLK-Library\src\Romi_Motor_Power.cpp:22:1: warning: no return statement in function returning non-void [-Wreturn-type]
- ```
+      C:\Users\Andy\OneDrive\Energia\libraries\Energia-RSLK-Library\src\Romi_Motor_Power.cpp:22:1: warning: no return statement in function returning non-void [-Wreturn-type]
+    ```
 
-References
-----------
+## References
 
-+ Texas Instruments TI-RSLK [product page][1].
-+ TI University [course page][10].
-+ TI-RSLK [curriculum][2].
-+ TI-RSLK [schematic][3].
-+ TI-RSLK [pin diagram][4].
-+ Energia-TI-RSLK [library][5] and [documentation][6].
-+ TI-RSLK and MSP432 [pin diagram][7] for Energia.
-+ NewHaven OLED [library][8].
-+ Energia-MT RTOS [overview][14].
-+ Energia-MT with Galaxia Library tutorials:
-  + [Multitasking][13]
-  + [Events][15]
-  + [Passing data across tasks][16]
-  + [Manage single resource across tasks][17]
+- Texas Instruments TI-RSLK [product page][1].
+- TI University [course page][10].
+- TI-RSLK [curriculum][2].
+- TI-RSLK [schematic][3].
+- TI-RSLK [pin diagram][4].
+- Energia-TI-RSLK [library][5] and [documentation][6].
+- TI-RSLK and MSP432 [pin diagram][7] for Energia.
+- NewHaven OLED [library][8].
+- Energia-MT RTOS [overview][14].
+- Energia-MT with Galaxia Library tutorials:
+  - [Multitasking][13]
+  - [Events][15]
+  - [Passing data across tasks][16]
+  - [Manage single resource across tasks][17]
 
-License
--------
+## License
+
 The software and other files in this repository are released under what is commonly called the [MIT License][100]. See the file [`LICENSE`][101] in this repository.
-
 
 [1]:https://www.ti.com/tool/TIRSLK-EVM
 [2]:https://university.ti.com/en/faculty/ti-robotics-system-learning-kit/ti-rslk-max-edition-curriculum
@@ -149,3 +148,4 @@ The software and other files in this repository are released under what is commo
 [18]:https://github.com/Andy4495/Energia-RSLK-Library
 [100]: https://choosealicense.com/licenses/mit/
 [101]: ./LICENSE.txt
+[200]: https://github.com/Andy4495/TI-RSLK-Example-Sketches
