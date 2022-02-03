@@ -26,7 +26,7 @@ In addition to the [Library Modifications](#Library-Modifications) listed below,
 
 ## Display Connection
 
-The RSLK main board has connections to attach an LCD or OLED display to the robot chassis. The pins directly support SparkFun 10168, Adafruit 338, or Adafruit 938 displays. I don't have any of those displays, so I connected a NewHaven 2x16 OLED. Since the pin placement does not match, I created an adapter board that made use of the AF938 connector (which I use because it has a 5V supply pin). The pins are numbers 8 to 1 (left to right) when looking at the chassis from the top:
+The RSLK main board has connections to attach an LCD or OLED display to the robot chassis. The pins directly support SparkFun 10168, Adafruit 338, or Adafruit 938 displays. I don't have any of those displays, so I connected a NewHaven 2x16 OLED. Since the pin placement does not match, I created an adapter board that made use of the AF938 connector (which I use because it has a 5V supply pin). The pins are numbered 8 to 1 (left to right) when looking at the chassis from the top:
 
 ```text
                    Display
@@ -49,7 +49,7 @@ GND           1      -       -      -
 
 ## Library Modifications
 
-I have made several updates to [my local fork][18] of the Energia-TI-RSLK library to eliminate compiler warnings and update some coding style preferences:
+I made several updates to [my local fork][18] of the Energia-TI-RSLK library to eliminate compiler warnings and update some coding style preferences:
 
 1. Remove use of "String" object. While the memory is not nearly as constrained on the MSP432 as it is on the MSP430 and lower-end Arduino controllers, my preferences is to avoid using String, particularly in libraries and example sketches.
 
