@@ -1,5 +1,8 @@
 # TI-RSLK Example Sketches
 
+[![Arduino Compile Sketches](https://github.com/Andy4495/TI-RSLK-Example-Sketches/actions/workflows/arduino-compile-sketches.yml/badge.svg)](https://github.com/Andy4495/TI-RSLK-Example-Sketches/actions/workflows/arduino-compile-sketches.yml)
+[![Check Markdown Links](https://github.com/Andy4495/TI-RSLK-Example-Sketches/actions/workflows/CheckMarkdownLinks.yml/badge.svg)](https://github.com/Andy4495/TI-RSLK-Example-Sketches/actions/workflows/CheckMarkdownLinks.yml)
+
 The Texas Instruments Robotics System Learning Kit (TI-RSLK) has a complete online embedded programming course based on it. The course uses Code Composer Studio for the development environment.
 
 A simpler development environment is available by using [Energia][11] and Franklin Cooper's "[Energia-RSLK-Library][5]" which provides easy to use functions to access the various peripherals that are part of the robot chassis. Combined with the multitasking capabilities built into Energia ("Energia-MT", based on [TI-RTOS][12]) and available on the MSP432 processor, a sophisticated robot control sketch can be created.
