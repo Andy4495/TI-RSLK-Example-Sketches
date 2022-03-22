@@ -2,10 +2,8 @@
 
 [//]: # (Automated link checker can't see inside private repos, so ignore checks for these URLs.)
 
-<!-- markdown-link-check-disable -->
-[![Arduino Compile Sketches](https://github.com/Andy4495/TI-RSLK-Example-Sketches/actions/workflows/arduino-compile-sketches.yml/badge.svg)](https://github.com/Andy4495/TI-RSLK-Example-Sketches/actions/workflows/arduino-compile-sketches.yml)
+<!-- markdown-link-check-disable-next-line -->
 [![Check Markdown Links](https://github.com/Andy4495/TI-RSLK-Example-Sketches/actions/workflows/CheckMarkdownLinks.yml/badge.svg)](https://github.com/Andy4495/TI-RSLK-Example-Sketches/actions/workflows/CheckMarkdownLinks.yml)
-<!-- markdown-link-check-enable -->
 
 The Texas Instruments Robotics System Learning Kit (TI-RSLK) has a complete online embedded programming course based on it. The course uses Code Composer Studio for the development environment.
 
