@@ -1,8 +1,6 @@
 # TI-RSLK Example Sketches
 
-[//]: # (Automated link checker can't see inside private repos, so ignore checks for these URLs.)
-
-<!-- markdown-link-check-disable-next-line -->
+[![Arduino Compile Sketches](https://github.com/Andy4495/TI-RSLK-Example-Sketches/actions/workflows/arduino-compile-sketches.yml/badge.svg)](https://github.com/Andy4495/TI-RSLK-Example-Sketches/actions/workflows/arduino-compile-sketches.yml)
 [![Check Markdown Links](https://github.com/Andy4495/TI-RSLK-Example-Sketches/actions/workflows/CheckMarkdownLinks.yml/badge.svg)](https://github.com/Andy4495/TI-RSLK-Example-Sketches/actions/workflows/CheckMarkdownLinks.yml)
 
 The Texas Instruments Robotics System Learning Kit (TI-RSLK) has a complete online embedded programming course based on it. The course uses Code Composer Studio for the development environment.
@@ -152,6 +150,5 @@ The software and other files in this repository are released under what is commo
 [17]:https://www.hackster.io/rei-vilo/manage-single-resource-with-energia-mt-and-galaxia-cadb26
 [18]:https://github.com/Andy4495/Energia-RSLK-Library
 [100]: https://choosealicense.com/licenses/mit/
-<!-- markdown-link-check-disable-next-line -->
 [101]: ./LICENSE.txt
 [200]: https://github.com/Andy4495/TI-RSLK-Example-Sketches
