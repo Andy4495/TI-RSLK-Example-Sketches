@@ -150,5 +150,5 @@ The software and other files in this repository are released under what is commo
 [17]:https://www.hackster.io/rei-vilo/manage-single-resource-with-energia-mt-and-galaxia-cadb26
 [18]:https://github.com/Andy4495/Energia-RSLK-Library
 [100]: https://choosealicense.com/licenses/mit/
-[101]: ./LICENSE.txt
+[101]: ./LICENSE
 [200]: https://github.com/Andy4495/TI-RSLK-Example-Sketches
