@@ -29,7 +29,10 @@
 */
 
 #include "SimpleRSLK.h"
+// The following #ifndef is to allow compilation with tivac board package
+#ifndef __TM4C123GH6PM__
 #include <cstdio>
+#endif
 
 uint16_t sensorVal[LS_NUM_SENSORS];
 uint16_t sensorCalVal[LS_NUM_SENSORS];
@@ -147,8 +150,11 @@ void loop()
                     sensorMaxVal,
                     lineColor);
 
-  uint32_t linePos = getLinePosition(sensorCalVal);
+  uint32_t linePos = getLinePosition(sensorCalVal, 0); // 0 -> line is darker than floor
+  // The following #ifndef is to allow compilation with tivac board package
+  #ifndef __TM4C123GH6PM__
   std::snprintf(oled_text, 33, "Sensor: %8lu                ", linePos);
+  #endif
   oled.write(oled_text);
 
   if (linePos < 100) {   // No line detected
