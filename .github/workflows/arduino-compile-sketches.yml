@@ -33,7 +33,7 @@ jobs:
           enable-warnings-report: true
           libraries: |
             - source-path: ./
-            - source-url: https://github.com/Andy4495/Energia-RSLK-Library.git
+            - source-url: https://github.com/fcooper/Energia-RSLK-Library.git
             - source-url: https://github.com/Andy4495/NewhavenOLED.git
       - name: Print the job summary
         if: ${{ inputs.message != null }}
