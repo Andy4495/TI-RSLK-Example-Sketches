@@ -1,8 +1,5 @@
 # From: https://github.com/marketplace/actions/compile-arduino-sketches
 # Uses: https://github.com/arduino/compile-sketches
-# The sketches in this repo were designed for msp432r platform
-# However, msp432r does not work with Arduino CLI, so we are using
-# tivac platform as a compilation test instead
 
 name: Arduino Compile Sketches
 
