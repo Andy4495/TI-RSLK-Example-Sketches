@@ -5,7 +5,7 @@
 
 The Texas Instruments Robotics System Learning Kit (TI-RSLK) has a complete online embedded programming course based on it. The course uses Code Composer Studio for the development environment.
 
-A simpler development environment is available by using [Energia][11] and Franklin Cooper's [Energia-RSLK-Library][5] which provides easy to use functions to access the various peripherals that are part of the robot chassis. Combined with the multitasking capabilities built into Energia ("Energia-MT", based on [TI-RTOS][12]) and available on the MSP432 processor, a sophisticated robot control sketch can be created.
+A simpler development environment is available by using [Energia][11] and Franklin Cooper's [Energia-RSLK-Library][5] which provides easy to use functions to access the various peripherals that are part of the robot chassis. Combined with the multitasking capabilities ("Energia-MT", based on [TI-RTOS][12]) and available on the MSP432 processor, a sophisticated robot control sketch can be created.
 
 This repo contains various example and testing programs that I have created while experimenting with the TI-RSLK.
 
@@ -46,13 +46,14 @@ GND           1      -       -      -
 
 ## References
 
-- Texas Instruments TI-RSLK [product page][1].
+- TI-RSLK [product page][1] at Pololu.
+  - Texas Instruments no longer appears to have the product for sale.
 - TI University [course page][10].
 - TI-RSLK [curriculum][2].
 - TI-RSLK [schematic][3].
 - TI-RSLK [pin diagram][4].
 - Energia-TI-RSLK [library][5] and [documentation][6].
-- TI-RSLK and MSP432 [pin diagram][7] for Energia.
+- TI-RSLK and MSP432 [pin diagram][7].
 - NewHaven OLED [library][8].
 - Energia-MT RTOS [overview][14].
 - Energia-MT with Galaxia Library tutorials:
@@ -65,7 +66,7 @@ GND           1      -       -      -
 
 The software and other files in this repository are released under what is commonly called the [MIT License][100]. See the file [`LICENSE`][101] in this repository.
 
-[1]:https://www.ti.com/tool/TIRSLK-EVM
+[1]:https://www.pololu.com/product/3670
 [2]:https://university.ti.com/en/faculty/ti-robotics-system-learning-kit/ti-rslk-max-edition-curriculum
 [3]:https://www.pololu.com/file/0J1670/ti-rslk-max-chassis-board-v1.0-schematic.pdf
 [4]:https://www.pololu.com/file/0J1695/ti_rslk_max_chassis_board_pinout.pdf
@@ -84,3 +85,5 @@ The software and other files in this repository are released under what is commo
 [100]: https://choosealicense.com/licenses/mit/
 [101]: ./LICENSE
 [//]: # ([200]: https://github.com/Andy4495/TI-RSLK-Example-Sketches)
+
+[//]: # ( Old TI product page no longer accessible: https://www.ti.com/tool/TIRSLK-EVM)
