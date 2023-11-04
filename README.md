@@ -3,9 +3,9 @@
 [![Arduino Compile Sketches](https://github.com/Andy4495/TI-RSLK-Example-Sketches/actions/workflows/arduino-compile-sketches.yml/badge.svg)](https://github.com/Andy4495/TI-RSLK-Example-Sketches/actions/workflows/arduino-compile-sketches.yml)
 [![Check Markdown Links](https://github.com/Andy4495/TI-RSLK-Example-Sketches/actions/workflows/CheckMarkdownLinks.yml/badge.svg)](https://github.com/Andy4495/TI-RSLK-Example-Sketches/actions/workflows/CheckMarkdownLinks.yml)
 
-The Texas Instruments Robotics System Learning Kit (TI-RSLK) has a complete online embedded programming course based on it. The course uses Code Composer Studio for the development environment.
+The Texas Instruments Robotics System Learning Kit (TI-RSLK) had an online embedded programming course based on it. **As of November 2023, it appears that Texas Instruments is no longer supporting the programming course, and all references to it appear to have been deleted from the ti.com website.**
 
-A simpler development environment is available by using [Energia][11] and Franklin Cooper's [Energia-RSLK-Library][5] which provides easy to use functions to access the various peripherals that are part of the robot chassis. Combined with the multitasking capabilities ("Energia-MT", based on [TI-RTOS][12]) and available on the MSP432 processor, a sophisticated robot control sketch can be created.
+An alternate development environment is available by using [Arduino][18] and Franklin Cooper's [Energia-RSLK-Library][5] which provides easy to use functions to access the various peripherals that are part of the robot chassis. Combined with the multitasking capabilities ("Energia-MT", based on [TI-RTOS][12]) and available on the MSP432 processor, a sophisticated robot control sketch can be created.
 
 This repo contains various example and testing programs that I have created while experimenting with the TI-RSLK.
 
@@ -48,8 +48,6 @@ GND           1      -       -      -
 
 - TI-RSLK [product page][1] at Pololu.
   - Texas Instruments no longer appears to have the product for sale.
-- TI University [course page][10].
-- TI-RSLK [curriculum][2].
 - TI-RSLK [schematic][3].
 - TI-RSLK [pin diagram][4].
 - Energia-TI-RSLK [library][5] and [documentation][6].
@@ -67,23 +65,24 @@ GND           1      -       -      -
 The software and other files in this repository are released under what is commonly called the [MIT License][100]. See the file [`LICENSE`][101] in this repository.
 
 [1]:https://www.pololu.com/product/3670
-[2]:https://university.ti.com/en/faculty/ti-robotics-system-learning-kit/ti-rslk-max-edition-curriculum
 [3]:https://www.pololu.com/file/0J1670/ti-rslk-max-chassis-board-v1.0-schematic.pdf
 [4]:https://www.pololu.com/file/0J1695/ti_rslk_max_chassis_board_pinout.pdf
 [5]:https://github.com/fcooper/Energia-RSLK-Library
 [6]:https://fcooper.github.io/Energia-RSLK-Library/
 [7]:https://embeddedcomputing.weebly.com/ti-rslk-max-pins-maps.html
 [8]:https://github.com/Andy4495/NewhavenOLED
-[10]:http://www.ti.com/rslk
-[11]:https://energia.nu/
 [12]:https://www.ti.com/tool/TI-RTOS-MCU
 [13]:https://www.hackster.io/rei-vilo/multi-tasking-with-energia-mt-and-galaxia-library-20bd64
 [14]:https://embeddedcomputing.weebly.com/launchpad-msp432-rtos-for-everyone.html
 [15]:https://www.hackster.io/rei-vilo/events-with-energia-mt-and-galaxia-library-741d9b
 [16]:https://www.hackster.io/rei-vilo/send-data-across-tasks-with-energia-and-galaxia-8be05c
 [17]:https://www.hackster.io/rei-vilo/manage-single-resource-with-energia-mt-and-galaxia-cadb26
+[18]: https://github.com/Andy4495/TI_Platform_Cores_For_Arduino
 [100]: https://choosealicense.com/licenses/mit/
 [101]: ./LICENSE
 [//]: # ([200]: https://github.com/Andy4495/TI-RSLK-Example-Sketches)
 
 [//]: # ( Old TI product page no longer accessible: https://www.ti.com/tool/TIRSLK-EVM)
+[//]: # ( Old links to the now-removed "TI University" course for the RSLK: )
+[//]: # ( [2]:https://university.ti.com/en/faculty/ti-robotics-system-learning-kit/ti-rslk-max-edition-curriculum )
+[//]: # ( [10]:http://www.ti.com/rslk )
