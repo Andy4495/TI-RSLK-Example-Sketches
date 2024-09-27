@@ -26,6 +26,10 @@
 
 */
 
+// MSP432 uses the RSLK library built into the platform core
+// Tiva needs to have the RSLK library installed from https://github.com/fcooper/Energia-RSLK-Library
+// The different libraries have slightly different parameter 
+// lists for some functions
 #include "Romi_Motor_Power.h"
 /* Defines pin configuration of robot */
 #include "RSLK_Pins.h"
@@ -83,11 +87,18 @@ void setup() {
 }
 
 void loop() {
-  const char* btnMsg = "Push left button on Launchpad to start demo.\n";
   oled.clear();
   oled.write(s1);
   /* Wait until button is pressed to start robot */
+#if defined(BOARD_MSP_EXP432P401R) || defined(BOARD_MSP_EXP432P4111)
+  waitBtnPressed(LP_LEFT_BTN, RED_LED);
+#else
+  // MSP432 uses the RSLK library built into the platform core instead of 
+  // pulling the library from the GitHub link above
+  // The MSP432 version does not have the "msg" parameter
+  const char* btnMsg = "Push left button on Launchpad to start demo.\n";
   waitBtnPressed(LP_LEFT_BTN, btnMsg, RED_LED);
+#endif
   oled.clear();
   oled.write(s2);
 

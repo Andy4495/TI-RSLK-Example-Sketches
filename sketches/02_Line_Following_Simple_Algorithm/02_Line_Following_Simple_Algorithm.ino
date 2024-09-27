@@ -28,6 +28,10 @@
 
 */
 
+// MSP432 uses the RSLK library built into the platform core
+// Tiva needs to have the RSLK library installed from https://github.com/fcooper/Energia-RSLK-Library
+// The different libraries have slightly different parameter 
+// lists for some functions
 #include "SimpleRSLK.h"
 // The following #ifndef is to allow compilation with tivac board package
 #ifndef __TM4C123GH6PM__
@@ -82,10 +86,16 @@ void floorCalibration() {
   delay(2000);
   oled.clear();
   oled.write(s1);
-  const char* btnMsg = "Push left button on Launchpad to begin calibration.\n" "Make sure the robot is on the floor away from the line.\n";
   /* Wait until button is pressed to start robot */
+#if defined(BOARD_MSP_EXP432P401R) || defined(BOARD_MSP_EXP432P4111)
+  waitBtnPressed(LP_LEFT_BTN, RED_LED);
+#else
+  // MSP432 uses the RSLK library built into the platform core instead of 
+  // pulling the library from the GitHub link above
+  // The MSP432 version does not have the "msg" parameter
+  const char* btnMsg = "Push left button on Launchpad to begin calibration.\n" "Make sure the robot is on the floor away from the line.\n";
   waitBtnPressed(LP_LEFT_BTN, btnMsg, RED_LED);
-
+#endif
   delay(1000);
 
   oled.clear();
@@ -96,11 +106,18 @@ void floorCalibration() {
   oled.write(s3);
   Serial.println("Reading floor values complete");
 
-  const char* btnMsg2 = "Push left button on Launchpad to begin line following.\n" "Make sure the robot is on the line.\n";
-  /* Wait until button is pressed to start robot */
   oled.clear();
-  oled.write(s4);
+  oled.write(s4); 
+  /* Wait until button is pressed to start robot */
+#if defined(BOARD_MSP_EXP432P401R) || defined(BOARD_MSP_EXP432P4111)
+  // MSP432 uses the RSLK library built into the platform core instead of 
+  // pulling the library from the GitHub link above
+  // The MSP432 version does not have the "msg" parameter
+  waitBtnPressed(LP_LEFT_BTN, RED_LED);
+#else
+  const char* btnMsg2 = "Push left button on Launchpad to begin line following.\n" "Make sure the robot is on the line.\n";
   waitBtnPressed(LP_LEFT_BTN, btnMsg2, RED_LED);
+#endif
   delay(1000);
 
   enableMotor(BOTH_MOTORS);
