@@ -1,7 +1,7 @@
 # TI-RSLK Example Sketches
 
 [![Arduino Compile Sketches](https://github.com/Andy4495/TI-RSLK-Example-Sketches/actions/workflows/arduino-compile-sketches.yml/badge.svg)](https://github.com/Andy4495/TI-RSLK-Example-Sketches/actions/workflows/arduino-compile-sketches.yml)
-[![Check Markdown Links](https://github.com/Andy4495/TI-RSLK-Example-Sketches/actions/workflows/CheckMarkdownLinks.yml/badge.svg)](https://github.com/Andy4495/TI-RSLK-Example-Sketches/actions/workflows/CheckMarkdownLinks.yml)
+[![Check Markdown Links](https://github.com/Andy4495/TI-RSLK-Example-Sketches/actions/workflows/check-links.yml/badge.svg)](https://github.com/Andy4495/TI-RSLK-Example-Sketches/actions/workflows/check-links.yml)
 
 The Texas Instruments Robotics System Learning Kit (TI-RSLK) had an online embedded programming course based on it. **As of November 2023, it appears that Texas Instruments is no longer supporting the programming course, and all references to it appear to have been deleted from the ti.com website.**
 
